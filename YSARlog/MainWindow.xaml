@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DockPanel>
+            <Menu x:Name="MainMenu" DockPanel.Dock="Top">
+                <MenuItem Header="_File" AutomationProperties.AccessKey="f" StaysOpenOnClick="True">
+                    <MenuItem Header="_New" AutomationProperties.HelpText="Create a new file"  />
+                    <MenuItem Header="_Open" AutomationProperties.HelpText="Open a file" />
+                    <MenuItem Header="_Save" AutomationProperties.HelpText="Save file" />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Teams" AutomationProperties.AccessKey="t" StaysOpenOnClick="True">
+                    <MenuItem Header="_Edit team names" AutomationProperties.HelpText="Edit the phonetic names of teams"  />
+                    <MenuItem Header="_Edit Team/Radio data" AutomationProperties.HelpText="Open a file" />
+                </MenuItem>
+                <MenuItem Header="_Help" AutomationProperties.AccessKey="t" StaysOpenOnClick="True"></MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
 
     </Grid>
+
 </Window>
