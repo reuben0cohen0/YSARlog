@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YSARlog"
         mc:Ignorable="d"
+        Icon="C:\Users\r.d.cohen\source\repos\YSARlog\YSARlog\YSAR-NZ-Logo-COL.ico"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <DockPanel>
@@ -22,8 +23,16 @@
                 </MenuItem>
                 <MenuItem Header="_Help" AutomationProperties.AccessKey="t" StaysOpenOnClick="True"></MenuItem>
             </Menu>
-            <TextBox AcceptsReturn="True" />
+            <DataGrid AutoGenerateColumns="False" Name="DataGridSar" CanUserAddRows="True" ItemsSource="{Binding SarBinding}" Margin="0,50,0,0" Width="797" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Team" IsReadOnly="False" Binding="{Binding Path=team}" Width="50"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Time" IsReadOnly="False"  Binding="{Binding Path=time}" Width="130"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Message" IsReadOnly="False"  Binding="{Binding Path=message}" Width="130"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Add new row" HorizontalAlignment="Left" Margin="-770,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         </DockPanel>
+        
 
     </Grid>
 
