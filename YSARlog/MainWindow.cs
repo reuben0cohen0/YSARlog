@@ -1,4 +1,8 @@
 ﻿using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
 
 namespace YSARlog
 {
@@ -10,21 +14,24 @@ namespace YSARlog
         public MainWindow()
         {
             InitializeComponent();
-        }
+        }//end mainwindow
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var data = new Log { team = "team", time = "time", message = "message" };
+            List<datas> users = new List<datas>();
+            users.Add(new datas() { team = "", time = "", message = "" });
 
-            DataGridSar.Items.Add(data);
+            DataGridSar.ItemsSource = users;
+        }//end button click
+
+        private class datas
+        {
+            public string team { get; set; }
+            public string time { get; set; }
+            public string message { get; set; }
         }
-    }
+    }//end window
+       
 
-    public class Log
-    {
-        public string team { get; set; }
-        public string time { get; set; }
-        public string message { get; set; }
-    } 
 
-}
+}// end namespace
