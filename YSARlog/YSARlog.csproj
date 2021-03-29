@@ -7,4 +7,12 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="YSAR-NZ-Logo-radio.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="YSAR-NZ-Logo-radio.png" />
+  </ItemGroup>
+
 </Project>
