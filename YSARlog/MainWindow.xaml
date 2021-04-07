@@ -26,13 +26,14 @@
             <DataGrid AutoGenerateColumns="False" Name="DataGridSar" CanUserAddRows="True" Margin="0,40,0,0" Width="797" >
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Team" Binding="{Binding Path=team}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Time"  Binding="{Binding Path=time}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Message"  Binding="{Binding Path=message}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Team" Binding="{Binding Path=Team}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Time"  Binding="{Binding Path=Time}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Message"  Binding="{Binding Path=Message}"></DataGridTextColumn>
                 </DataGrid.Columns>
 
             </DataGrid>
             <Button Content="Start Log" HorizontalAlignment="Left" Margin="-770,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+            <Button Content="Save" HorizontalAlignment="Left" Margin="-670,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
 
         </DockPanel>
         <controls:Image Margin="700,19,2,378" Source="/YSAR-NZ-Logo-radio.png" Stretch="Uniform" StretchDirection="Both"/>
