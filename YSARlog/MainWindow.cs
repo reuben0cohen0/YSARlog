@@ -14,10 +14,10 @@ namespace YSARlog
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<datas> users;
+        public List<Datas> users;
 
         public string Team { get; set; }
-        public string Time { get; set; }
+        public string Time { get;  set; }
         public string Message { get; set; }
 
     public MainWindow()
@@ -28,10 +28,10 @@ namespace YSARlog
 
         public void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            List<datas> users = new List<datas>();
-            datas newUser = new datas() { Team = "test", Time = "" + DateTime.Now + "", Message = "" };
+            List<Datas> users = new List<Datas>();
+            Datas newUser = new Datas() { Team = "", Time = "" + DateTime.Now + "", Message = "" };
             users.Add(newUser);
-            
+
 
             DataGridSar.ItemsSource = users;
 
@@ -47,19 +47,13 @@ namespace YSARlog
                 writer.Write(textToAdd);
             }
         }
-        public class datas
+        public class Datas
         {
             public string Team { get; set; }
             public string Time { get; set; }
             public string Message { get; set; }
         }
-    
-
-
-      
 
     }//end window
-       
-
 
 }// end namespace
