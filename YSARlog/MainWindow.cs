@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 using System.Text;
+using System.Reflection;
 
 
 namespace YSARlog
@@ -13,26 +14,24 @@ namespace YSARlog
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public List<datas> users;
+
+        public string Team { get; set; }
+        public string Time { get; set; }
+        public string Message { get; set; }
+
+    public MainWindow()
         {
             InitializeComponent();
-            List<datas> users = new List<datas>();
-            users.Add(new datas() { Team = "", Time = "" + DateTime.Now + "", Message = "" });
-
-            string fileName = "log.txt";
-            string textToAdd = "";
-
-            using (StreamWriter writer = new StreamWriter(fileName))
-            {
-                writer.Write(textToAdd);
-            }
 
         }//end mainwindow
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<datas> users = new List<datas>();
-            users.Add(new datas() { Team = "", Time = ""+ DateTime.Now +"", Message = "" });
+            datas newUser = new datas() { Team = "test", Time = "" + DateTime.Now + "", Message = "" };
+            users.Add(newUser);
+            
 
             DataGridSar.ItemsSource = users;
 
@@ -41,21 +40,23 @@ namespace YSARlog
         private void Button_Click_2(object sender, EventArgs e)
         {
             string fileName = @"C:\Users\r.d.cohen\source\repos\YSARlog\YSARlog\log.txt";
-            string textToAdd = ($"Log: {Team}");
+            string textToAdd = $"Log: {get.newUser {return Team; }}";
 
             using (StreamWriter writer = new StreamWriter(fileName))
             {
                 writer.Write(textToAdd);
             }
         }
-
-
-        private class datas
+        public class datas
         {
             public string Team { get; set; }
             public string Time { get; set; }
             public string Message { get; set; }
         }
+    
+
+
+      
 
     }//end window
        

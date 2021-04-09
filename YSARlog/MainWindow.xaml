@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:YSARlog" xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         mc:Ignorable="d"
         Icon="C:\Users\r.d.cohen\source\repos\YSARlog\YSARlog\YSAR-NZ-Logo-COL.ico"
@@ -22,6 +23,7 @@
                     <MenuItem Header="_Edit Team/Radio data" AutomationProperties.HelpText="Open a file" />
                 </MenuItem>
                 <MenuItem Header="_Help" AutomationProperties.AccessKey="t" StaysOpenOnClick="True"></MenuItem>
+
             </Menu>
             <DataGrid AutoGenerateColumns="False" Name="DataGridSar" CanUserAddRows="True" Margin="0,40,0,0" Width="797" >
 
