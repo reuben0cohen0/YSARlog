@@ -1,1 +1,2 @@
-alpha 01
+Log: alpha 01, 13/04/2021 12:01:19 pm, reached checkpoint 2
+Log: alpha 03, 12:01, reached base
