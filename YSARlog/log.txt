@@ -1,6 +1,2 @@
-Log: 13/04/2021 3:17:34 pm, , urherw'
-Log: , , were
-Log: , , et
-Log: , , e
-Log: , , te
-Log: , , 
+Log: 13/04/2021 5:49:57 pm, , Alpha 01, reached checkpoint charlie, 656687
+Log: 5:50pm, True, Alpha 09, Discovered wrapper next to trail, 665777

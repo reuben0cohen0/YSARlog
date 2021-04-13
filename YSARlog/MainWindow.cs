@@ -11,7 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Input;
-
+using System.Windows.Threading;
 
 namespace YSARlog
 {
@@ -23,19 +23,26 @@ namespace YSARlog
         public List<Datas> users;
 
         public string Team { get; set; }
+        public string Clue { get; set; }
         public string Time { get;  set; }
         public string Message { get; set; }
+        public string NZTM { get; set; }
 
     public MainWindow()
         {
             InitializeComponent();
+
+                DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+                {
+                    this.dateText.Text = DateTime.Now.ToString("                                                dddd dd/MM/yy   HH:mm:ss");
+                }, this.Dispatcher);
 
         }//end mainwindow
 
         public void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<Datas> users = new List<Datas>();
-            Datas newUser = new Datas() { Time = "" + DateTime.Now + "", Team = "", Message = "" };
+            Datas newUser = new Datas() { Time = "" + DateTime.Now + "", Clue = "", Team = "", Message = "", NZTM = "" };
             users.Add(newUser);
 
 
@@ -56,15 +63,15 @@ namespace YSARlog
             while (enumerator.MoveNext())
             {
                 Datas item = (Datas) enumerator.Current;
-                textToAdd = $"Log: {item.Time}, {item.Team}, {item.Message}";
+                textToAdd = $"Log: {item.Time}, {item.Clue}, {item.Team}, {item.Message}, {item.NZTM}";
                 
                 writer.WriteLine(textToAdd);
-            }
+            }//end streamwriter
             System.Windows.Forms.MessageBox.Show("Saved!");
 
 
 
-        }
+        }//end button click 2
 
         private void Button_Click_3(object sender, EventArgs e)
         {
@@ -73,9 +80,7 @@ namespace YSARlog
                 "To save the log at the end of the exercsie, click File -> Save" + Environment.NewLine +
                "Please note that clicking save will overwrite the log.txt file. Make sure to make a copy of your previous ones or rename them when you have finished" + Environment.NewLine);
       
-
-            
-        }
+        }//end button click 3
 
         public class Datas : IEnumerable
         {
@@ -84,10 +89,12 @@ namespace YSARlog
             {
                 return ((IEnumerable)Team).GetEnumerator();
             }
+            public string Clue {get; set;}
             public string Time { get; set; }
             public string Message { get; set; }
+            public string NZTM { get; set; }
 
-        }
+        }// end class datas
 
     }//end window
 
