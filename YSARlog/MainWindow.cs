@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-
+using System.Windows.Input;
 
 
 namespace YSARlog
@@ -60,10 +60,10 @@ namespace YSARlog
                 
                 writer.WriteLine(textToAdd);
             }
-           
+            System.Windows.Forms.MessageBox.Show("Saved!");
 
-            
-            
+
+
         }
 
         private void Button_Click_3(object sender, EventArgs e)
