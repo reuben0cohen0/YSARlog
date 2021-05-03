@@ -52,14 +52,15 @@ namespace YSARlog
 
         private void Button_Click_2(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\r.d.cohen\source\repos\YSARlog\YSARlog\log.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string n = string.Format("YSARLog {0:dd-MM-yyyy}.txt",DateTime.Now);
             string textToAdd = "test";
 
             IEnumerator enumerator = DataGridSar.ItemsSource.GetEnumerator();
             //enumerator.MoveNext();
             //Datas item = (Datas) enumerator.Current;
             //textToAdd = item.Team;
-            using (StreamWriter writer = new StreamWriter(fileName))
+            using (StreamWriter writer = new StreamWriter(n))
             while (enumerator.MoveNext())
             {
                 Datas item = (Datas) enumerator.Current;
@@ -93,6 +94,7 @@ namespace YSARlog
             public string Time { get; set; }
             public string Message { get; set; }
             public string NZTM { get; set; }
+
 
         }// end class datas
 
