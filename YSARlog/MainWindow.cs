@@ -39,6 +39,11 @@ namespace YSARlog
 
         }//end mainwindow
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
         public void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<Datas> users = new List<Datas>();
@@ -46,21 +51,20 @@ namespace YSARlog
             users.Add(newUser);
 
 
+
             DataGridSar.ItemsSource = users;
 
-        }//end button click
+        }//end button click (new table)
 
         private void Button_Click_2(object sender, EventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string n = string.Format("YSARLog {0:dd-MM-yyyy}.txt",DateTime.Now);
+            string filename = string.Format("YSARLog {0:dd-MM-yyyy}.txt",DateTime.Now);
             string textToAdd = "test";
 
             IEnumerator enumerator = DataGridSar.ItemsSource.GetEnumerator();
-            //enumerator.MoveNext();
-            //Datas item = (Datas) enumerator.Current;
-            //textToAdd = item.Team;
-            using (StreamWriter writer = new StreamWriter(n))
+
+            using (StreamWriter writer = new StreamWriter(filename))
             while (enumerator.MoveNext())
             {
                 Datas item = (Datas) enumerator.Current;
@@ -72,7 +76,7 @@ namespace YSARlog
 
 
 
-        }//end button click 2
+        }//end button click 2 (save file)
 
         private void Button_Click_3(object sender, EventArgs e)
         {
@@ -81,7 +85,7 @@ namespace YSARlog
                 "To save the log at the end of the exercsie, click File -> Save" + Environment.NewLine +
                "Please note that clicking save will overwrite the log.txt file. Make sure to make a copy of your previous ones or rename them when you have finished" + Environment.NewLine);
       
-        }//end button click 3
+        }//end button click 3 (help box)
 
         public class Datas : IEnumerable
         {

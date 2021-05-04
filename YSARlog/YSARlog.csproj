@@ -5,10 +5,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>YSAR-NZ-Logo-COL.ico</ApplicationIcon>
+    <Authors>Reuben Cohen</Authors>
+    <Company>Youth Search and Rescue NZ</Company>
+    <Description>An application to log recieved radio transmisions from teams in the field.</Description>
+    <Copyright>Copyright YSAR NZ 2021. Internal Organisation use only. No part of this program may be reproduced or used outside the organisation without the owners permission.</Copyright>
+    <PackageIcon>YSAR-NZ-Logo-radio.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="YSAR-NZ-Logo-radio.png" />
+    <None Include="YSAR-NZ-Logo-radio.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
