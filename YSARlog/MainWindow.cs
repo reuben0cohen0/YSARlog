@@ -58,9 +58,17 @@ namespace YSARlog
 
         private void Button_Click_2(object sender, EventArgs e)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filename = string.Format("YSARLog {0:dd-MM-yyyy}.txt",DateTime.Now);
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+            string filename = @"C:\YSARLog\Radio Logs\YSARLog "+ DateTime.Now.ToString("dd_MM_yyyy HH-mm") + ".txt";
             string textToAdd = "test";
+
+            string folderName = @"c:\YSARLog";
+            string pathString = System.IO.Path.Combine(folderName, "Radio Logs");
+            System.IO.Directory.CreateDirectory(pathString);
+            pathString = System.IO.Path.Combine(pathString, filename);
+            Console.WriteLine("Path to my file: {0}\n", pathString);
+
 
             IEnumerator enumerator = DataGridSar.ItemsSource.GetEnumerator();
 
@@ -68,13 +76,11 @@ namespace YSARlog
             while (enumerator.MoveNext())
             {
                 Datas item = (Datas) enumerator.Current;
-                textToAdd = $"Log: {item.Time}, {item.Clue}, {item.Team}, {item.Message}, {item.NZTM}";
+                textToAdd = $"Log: {item.Time}, is Clue: {item.Clue}, {item.Team}, {item.Message}, NZTM/6Fig: {item.NZTM}";
                 
                 writer.WriteLine(textToAdd);
             }//end streamwriter
             System.Windows.Forms.MessageBox.Show("Saved!");
-
-
 
         }//end button click 2 (save file)
 
