@@ -12,33 +12,34 @@
         <DockPanel>
             <Menu x:Name="MainMenu" DockPanel.Dock="Top">
                 <MenuItem Header="_File" AutomationProperties.AccessKey="f" StaysOpenOnClick="True">
-                    <MenuItem Header="_New" AutomationProperties.HelpText="Create a new log file" Click="Button_Click_1"/>
-                    <MenuItem Header="_Save" AutomationProperties.HelpText="Save file" Click="Button_Click_2"/>
+                    <MenuItem Header="_New" AutomationProperties.AccessKey="n" AutomationProperties.HelpText="Create a new log file" Click="Button_Click_1"/>
+                    <MenuItem Header="_Save" AutomationProperties.AccessKey="s" AutomationProperties.HelpText="Save file" Click="Button_Click_2"/>
                     <Separator />
-                    <MenuItem Header="_Exit" Click="MenuItem_Click"/></MenuItem>
+                    <MenuItem Header="_Exit" Click="MenuItem_Click"/>
+                </MenuItem>
                 <MenuItem Header="_Help" AutomationProperties.AccessKey="t" StaysOpenOnClick="True" Click="Button_Click_3"></MenuItem>
-                <TextBlock Name="dateText"/>
-                
+                <TextBlock Name="DateText"/>
+
             </Menu>
-            <DataGrid AutoGenerateColumns="False" Name="DataGridSar" Margin="0,40,0,0" ColumnWidth="*" HorizontalAlignment="Stretch" >
+            <DataGrid AutoGenerateColumns="False" Name="DataGridSar" Margin="0,40,0,0" ColumnWidth="*" HorizontalAlignment="Stretch">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Time"  Binding="{Binding Path=Time}" FontWeight="Bold" FontSize="14" MinWidth="160"></DataGridTextColumn>
-                   <DataGridCheckBoxColumn Header="Is Clue" Binding="{Binding Path=Clue}" Width="50" MaxWidth="50" MinWidth="49"></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" FontWeight="Bold" FontSize="14" MinWidth="160"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Is Clue" Binding="{Binding Path=Clue}" Width="50" MaxWidth="50" MinWidth="49"></DataGridCheckBoxColumn>
                     <DataGridTextColumn Header="Team" Binding="{Binding Path=Team}" FontSize="14" MinWidth="70" ></DataGridTextColumn>
                     <DataGridTextColumn Header="Message"  Binding="{Binding Path=Message}" Width="1200" FontSize="14"></DataGridTextColumn>
                     <DataGridTextColumn Header="NZTM/6Fig"  Binding="{Binding Path=NZTM}" FontSize="14" MinWidth="70"></DataGridTextColumn>
                 </DataGrid.Columns>
-            
+
 
             </DataGrid>
-           
+
 
         </DockPanel>
         <controls:Image Margin="700,19,2,378" Source="/YSAR-NZ-Logo-radio.png" Stretch="Uniform" StretchDirection="Both" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Height="Auto"/>
 
 
     </Grid>
-    
+
 
 </Window>
